@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koda's Health Tracker</title>
+    <!-- main styles -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ===================== TOP NAV / PUBLIC ===================== -->
+    <header class="topbar">
+      <div class="container nav-row">
+        <div class="logo">Koda's Health Tracker 🐾</div>
+        <nav>
+          <!-- these scroll to public sections -->
+          <a href="#hero">Home</a>
+          <a href="#features">Features</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ===================== PUBLIC HERO ===================== -->
+    <section id="hero" class="hero public-section">
+      <div class="container hero-content">
+        <p class="eyebrow">pet health dashboard</p>
+        <h1>All your pet’s health info in one cozy place.</h1>
+        <p class="hero-sub">
+          Track vaccines, deparazitare, vet visits and habits. Keep everything
+          tidy for every pet.
+        </p>
+        <div class="hero-actions">
+          <!-- this button will show the dashboard area -->
+          <button id="show-dashboard-btn" class="btn primary">
+            View my dashboard
+          </button>
+          <a href="#features" class="btn ghost">How it works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PUBLIC FEATURE STRIP ===================== -->
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">Why pet parents love it</h2>
+        <p class="section-sub">
+          Built to be simple, warm and made for real-life vet visits.
+        </p>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>📋 Health history</h3>
+            <p>
+              Store vaccines, deparazitare (interna/externa), surgeries,
+              allergies.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>⏰ Reminders</h3>
+            <p>Never forget a vet visit or a vaccine again.</p>
+          </article>
+          <article class="feature-card">
+            <h3>🐶 Multi-pet ready</h3>
+            <p>Add more pets later. Each pet has its own records.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DASHBOARD (logged-in area / demo) ===================== -->
+    <!-- we hide it by default; JS will remove .hidden -->
+    <section id="dashboard" class="section dashboard hidden">
+      <div class="container">
+        <!-- ===== DASHBOARD HERO ===== -->
+        <div class="dash-hero">
+          <div>
+            <p class="eyebrow">welcome back</p>
+            <h2>Hi Andreea 👋</h2>
+            <p class="dash-sub">Here’s Koda’s health overview today.</p>
+          </div>
+          <div class="dash-actions">
+            <button class="btn primary" onclick="scrollToSection('records')">
+              + Add health record
+            </button>
+            <button class="btn ghost" onclick="scrollToSection('pets')">
+              View pets
+            </button>
+          </div>
+        </div>
+
+        <!-- ===== INSIGHTS ROW ===== -->
+        <div class="insights-grid">
+          <!-- insight 1 -->
+          <div class="insight-card">
+            <p class="insight-label">Next vet visit</p>
+            <p class="insight-value">Not scheduled</p>
+            <p class="insight-note">Add one in Health Records.</p>
+          </div>
+          <!-- insight 2 -->
+          <div class="insight-card">
+            <p class="insight-label">Vaccines due</p>
+            <p class="insight-value">3</p>
+            <p class="insight-note">2 this month, 1 in 30 days.</p>
+          </div>
+          <!-- insight 3 -->
+          <div class="insight-card">
+            <p class="insight-label">Total pets</p>
+            <p class="insight-value">2</p>
+            <p class="insight-note">Add more whenever you want.</p>
+          </div>
+          <!-- insight 4 -->
+          <div class="insight-card">
+            <p class="insight-label">Last update</p>
+            <p class="insight-value">today</p>
+            <p class="insight-note">You’re doing great 🐾</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PETS SECTION (inside dashboard) ===== -->
+      <section id="pets" class="section section-narrow">
+        <div class="container">
+          <div class="section-head">
+            <h2>My Pets</h2>
+            <p>Manage profiles for all your pets.</p>
+            <button class="btn primary">+ Add new pet</button>
+          </div>
+
+          <div class="pets-grid">
+            <!-- pet 1 -->
+            <article class="pet-card">
+              <div class="pet-photo">
+                <img src="./assets/images/cocker.png" alt="Koda" />
+              </div>
+              <div class="pet-info">
+                <h3>Koda</h3>
+                <p class="pet-meta">Cocker Spaniel • 4 yrs</p>
+                <p class="pet-notes">Loves walks, hates bath time.</p>
+                <div class="pet-actions">
+                  <button
+                    class="btn ghost small"
+                    onclick="scrollToSection('profile')"
+                  >
+                    View profile
+                  </button>
+                  <button
+                    class="btn primary small"
+                    onclick="scrollToSection('records')"
+                  >
+                    Add record
+                  </button>
+                </div>
+              </div>
+            </article>
+            <!-- pet 2 -->
+            <article class="pet-card">
+              <div class="pet-photo">
+                <img src="./assets/images/cocker.png" alt="Bella" />
+              </div>
+              <div class="pet-info">
+                <h3>Bella</h3>
+                <p class="pet-meta">Mixed • 2 yrs</p>
+                <p class="pet-notes">Allergic to chicken.</p>
+                <div class="pet-actions">
+                  <button
+                    class="btn ghost small"
+                    onclick="scrollToSection('profile')"
+                  >
+                    View profile
+                  </button>
+                  <button
+                    class="btn primary small"
+                    onclick="scrollToSection('records')"
+                  >
+                    Add record
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PET PROFILE FORM ===== -->
+      <section id="profile" class="section section-narrow">
+        <div class="container">
+          <h2>Pet Profile</h2>
+          <p class="section-sub">Save name, DOB, habits and photo.</p>
+
+          <form id="profile-form" class="card">
+            <label for="pet-name">Name:</label>
+            <input type="text" id="pet-name" placeholder="Koda" />
+
+            <label for="pet-dob">Date of Birth:</label>
+            <input type="date" id="pet-dob" />
+
+            <label for="pet-habits">Habits / notes:</label>
+            <textarea
+              id="pet-habits"
+              rows="3"
+              placeholder="Loves walks, hates bath time"
+            ></textarea>
+
+            <label for="pet-photo">Photo:</label>
+            <input type="file" id="pet-photo" accept="image/*" />
+
+            <button type="submit" class="btn primary">Save Profile</button>
+          </form>
+
+          <!-- where saved profile will show -->
+          <div id="profile-display" class="card hidden">
+            <img id="profile-img" alt="Pet photo" />
+            <h3 id="profile-name"></h3>
+            <p id="profile-dob"></p>
+            <p id="profile-habits-display"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== HEALTH RECORDS ===== -->
+      <section id="records" class="section section-narrow">
+        <div class="container">
+          <h2>Health Records</h2>
+          <p class="section-sub">Add vaccines, treatments, vet visits.</p>
+
+          <form id="health-form" class="card">
+            <label for="vaccine">Vaccine / Treatment:</label>
+            <input type="text" id="vaccine" required />
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" required />
+
+            <label for="notes">Notes:</label>
+            <textarea id="notes" rows="3"></textarea>
+
+            <button type="submit" class="btn primary">Save Record</button>
+          </form>
+
+          <div id="records-list" class="records-wrap">
+            <h3>Saved records</h3>
+            <div id="records"></div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="contact" class="footer">
+      <div class="container footer-content">
+        <p>Made for Koda 🐶 • practice project</p>
+
+        <!-- gooey socials (this replaces the text links) -->
+        <div class="footer-socials">
+          <a href="#" class="button" title="Instagram">
+            <i class="fab fa-instagram"></i>
+            <div class="blurred"><span></span><span></span></div>
+          </a>
+          <a href="#" class="button" title="TikTok">
+            <i class="fab fa-tiktok"></i>
+            <div class="blurred"><span></span><span></span></div>
+          </a>
+          <a href="#" class="button" title="GitHub">
+            <i class="fab fa-github"></i>
+            <div class="blurred"><span></span><span></span></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- goo filter -->
+      <svg style="display: none">
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 21 -9"
+            result="goo"
+          />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </svg>
+    </footer>
+
+    <!-- ===== SOCIAL MEDIA GOOEY BUTTONS ===== -->
+    <div class="buttons-wrapper">
+      <a href="#" class="button" title="Instagram">
+        <i class="fab fa-instagram"></i>
+        <div class="blurred">
+          <span></span>
+          <span></span>
+        </div>
+      </a>
+
+      <a href="#" class="button" title="TikTok">
+        <i class="fab fa-tiktok"></i>
+        <div class="blurred">
+          <span></span>
+          <span></span>
+        </div>
+      </a>
+
+      <a href="#" class="button" title="GitHub">
+        <i class="fab fa-github"></i>
+        <div class="blurred">
+          <span></span>
+          <span></span>
+        </div>
+      </a>
+    </div>
+
+    <!-- SVG filter for goo effect -->
+    <svg style="display: none">
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="1 0 0 0 0  
+              0 1 0 0 0  
+              0 0 1 0 0  
+              0 0 0 21 -9"
+          result="goo"
+        />
+        <feBlend in="SourceGraphic" in2="goo" />
+      </filter>
+    </svg>
+
+    <!-- main JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
